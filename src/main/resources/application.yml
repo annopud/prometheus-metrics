@@ -1,3 +1,11 @@
 spring:
   application:
     name: prometheus-metrics
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+          - health
+          - info

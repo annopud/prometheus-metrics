@@ -1,0 +1,9 @@
+scrape_configs:
+  - job_name: 'MetricsDemo'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 3s
+    static_configs:
+        # This is the target for the Spring Boot application running on the host machine.
+      - targets: ['host.docker.internal:8080']
+        labels:
+          application: 'Spring Boot metrics demo application'
